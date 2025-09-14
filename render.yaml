@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: rag-api
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false # This means it needs to be set manually in Render dashboard
+    healthCheckPath: /
+    numInstances: 1
+    buildCommand: docker build -t rag-api .
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT

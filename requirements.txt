@@ -2,10 +2,11 @@ fastapi
 uvicorn
 pydantic
 requests
-playwright
 beautifulsoup4
 lxml
 PyPDF2
+pytesseract
+pdf2image
 python-pptx
 pandas
 openpyxl
@@ -16,5 +17,9 @@ langchain-huggingface
 langchain-openai
 langchain-community
 openai
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.2.1+cpu
+torchvision==0.17.1+cpu
 sentence-transformers
 faiss-cpu
+google.generativeai

@@ -26,6 +26,16 @@ class URLQuery(BaseQuery):
         example=["What is the main topic of this document?", "Who is the author?"]
     )
 
+class FileQuery(BaseModel):
+    """
+    Defines the structure for a query involving an uploaded file and a set of questions.
+    """
+    questions: List[str] = Field(
+        ...,
+        description="A list of questions to be answered based on the content of the uploaded file.",
+        example=["What is the main topic of this document?", "Who is the author?"]
+    )
+
 class BaseResponse(BaseModel):
     """
     A generic base model for API responses.
